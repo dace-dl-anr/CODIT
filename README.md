@@ -1,5 +1,9 @@
 # CODIT Ontology
-
+## Links:
+- [Visit the Ontology Website](https://codit.com)
+- [Download the RDF file](ontology.rdf)
+- [Go to Features Section](#features)
+  
 ## Overview
 
 The CODIT (Core Ontology for Data Interlinking Tools) ontology provides a structured framework for describing and categorizing various aspects of data linking tools. It is designed to capture the core concepts, properties, and relationships involved in the data linking process, supporting interoperability and comparative evaluation among tools. CODIT covers linking tools, techniques, data formats, and related features, making it suitable for knowledge management, ontology alignment, and data interlinking applications.
