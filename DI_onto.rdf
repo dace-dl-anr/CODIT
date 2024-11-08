@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools/"
+     xml:base="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:OntologyDITools="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#type -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#type">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#acceptsData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#acceptsData">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InputData"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#appliedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#appliedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#ApplicationDomain"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#evaluatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#evaluatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#PerformanceMetric"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#hasDependency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#hasDependency">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Dependency"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#hasFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#hasFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Feature"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#producesOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#producesOutput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OutputData"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#usesTechnique -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#usesTechnique">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#compatibility -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#compatibility">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#configuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#configuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#description">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Dependency"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Feature"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#PerformanceMetric"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#developer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#developer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#format -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#format">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InputData"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OutputData"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#source -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#source">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Dependency"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#type">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InputData"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OutputData"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#version -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#version">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Dependency"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#ApplicationDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#ApplicationDomain"/>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Dependency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Dependency"/>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#EmbeddingBasedMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#EmbeddingBasedMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Feature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Feature"/>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InputData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InputData"/>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MachineLearningMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MachineLearningMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OutputData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OutputData"/>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#PerformanceMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#PerformanceMetric"/>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#RuleBasedMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#RuleBasedMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
