@@ -1,8 +1,7 @@
 # CODIT Ontology
 ## Links:
-- [Visit the Ontology Website](https://codit.com)
-- [Download the RDF file](ontology.rdf)
-- [Go to Features Section](#features)
+
+- [Download the RDF file](https://github.com/dace-dl-anr/CODIT/blob/main/DI_onto.rdf)
   
 ## Overview
 
