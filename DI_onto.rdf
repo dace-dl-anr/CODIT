@@ -57,6 +57,7 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InputData"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:label xml:lang="en">accepts data</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -77,6 +78,7 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#ApplicationDomain"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:label xml:lang="en">applied in</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -97,6 +99,7 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#PerformanceMetric"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:label xml:lang="en">evaluated by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -117,6 +120,7 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Dependency"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:label xml:lang="en">has dependency</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -137,6 +141,7 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Feature"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:label xml:lang="en">has feature</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -157,6 +162,28 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OutputData"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:label xml:lang="en">produces output</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#suitedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#suitedFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingProbemType"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">suited for</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -177,6 +204,7 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
             </owl:Restriction>
         </rdfs:range>
+        <rdfs:label xml:lang="en">uses technique</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -374,13 +402,26 @@
 
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#ApplicationDomain -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#ApplicationDomain"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#ApplicationDomain">
+        <rdfs:label xml:lang="en">Application Domain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#AttributeSimilarity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#AttributeSimilarity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MatchingCriterion"/>
+        <rdfs:label xml:lang="en">Attribute Similarity</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Dependency -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Dependency"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Dependency">
+        <rdfs:label xml:lang="en">Dependency</rdfs:label>
+    </owl:Class>
     
 
 
@@ -388,31 +429,57 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#EmbeddingBasedMethod">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+        <rdfs:label xml:lang="en">Embedding Based Method</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Feature -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Feature"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Feature">
+        <rdfs:label xml:lang="en">Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#GraphTraversal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#GraphTraversal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MatchingCriterion"/>
+        <rdfs:label xml:lang="en">Graph Traversal</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InputData -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InputData"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InputData">
+        <rdfs:label xml:lang="en">Input Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingProbemType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingProbemType">
+        <rdfs:label xml:lang="en">Linking Problem Type (LPT)</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique">
+        <rdfs:label xml:lang="en">Linking Technique</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool">
+        <rdfs:label xml:lang="en">Linking Tool</rdfs:label>
+    </owl:Class>
     
 
 
@@ -420,19 +487,32 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MachineLearningMethod">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+        <rdfs:label xml:lang="en">Machine Learning Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MatchingCriterion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MatchingCriterion">
+        <rdfs:label xml:lang="en">Matching Criterion</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OutputData -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OutputData"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OutputData">
+        <rdfs:label xml:lang="en">Output Data</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#PerformanceMetric -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#PerformanceMetric"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#PerformanceMetric">
+        <rdfs:label xml:lang="en">Performance Metric</rdfs:label>
+    </owl:Class>
     
 
 
@@ -440,6 +520,16 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#RuleBasedMethod">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+        <rdfs:label xml:lang="en">Rule Based Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#StringSimilarity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#StringSimilarity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MatchingCriterion"/>
+        <rdfs:label xml:lang="en">String Similarity</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
