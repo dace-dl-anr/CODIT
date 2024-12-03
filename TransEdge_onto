@@ -1,0 +1,87 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:codit="http://example.org/codit#">
+
+    <!-- LinkingTool: TransEdge -->
+    <codit:LinkingTool rdf:about="http://example.org/tools/TransEdge">
+        <codit:name>TransEdge</codit:name>
+        <codit:version>1.0</codit:version>
+        <codit:developer>Zequn Sun, Jiacheng Huang, Wei Hu, Lingbing Guo,Muhao Chen, and Yuzhong Qu</codit:developer>
+        <codit:source>https://github.com/nju-websoft/TransEdge</codit:source>
+        <codit:description>
+            TransEdge is an edge-centric translational embedding model for knowledge graphs (KGs).
+            It contextualizes relation representations in terms of specific head-tail entity pairs
+            to capture relational structures of KGs effectively. It supports entity alignment and link prediction tasks.
+        </codit:description>
+        <codit:requiresTraining>true</codit:requiresTraining>
+        <codit:usesTechnique rdf:resource="http://example.org/techniques/EdgeCentricEmbeddingMethod"/>
+        <codit:acceptsData rdf:resource="http://example.org/data/KnowledgeGraphData"/>
+        <codit:producesOutput rdf:resource="http://example.org/data/EntityAlignmentsAndPredictions"/>
+        <codit:hasFeature rdf:resource="http://example.org/features/Scalability"/>
+        <codit:hasFeature rdf:resource="http://example.org/features/Explainability"/>
+        <codit:evaluatedBy rdf:resource="http://example.org/metrics/HitsAtK"/>
+        <codit:evaluatedBy rdf:resource="http://example.org/metrics/MRR"/>
+        <codit:hasTraining rdf:resource="http://example.org/training/TransEdgeTraining"/>
+    </codit:LinkingTool>
+
+    <!-- LinkingTechnique: Edge-Centric Embedding Method -->
+    <codit:LinkingTechnique rdf:about="http://example.org/techniques/EdgeCentricEmbeddingMethod">
+        <codit:name>Edge-Centric Embedding Method</codit:name>
+        <codit:description>
+            A method to model relations with edge embeddings contextualized by head-tail entity pairs, capturing KG structures through translations.
+        </codit:description>
+    </codit:LinkingTechnique>
+
+    <!-- InputData -->
+    <codit:InputData rdf:about="http://example.org/data/KnowledgeGraphData">
+        <codit:category>Knowledge Graph Data</codit:category>
+        <codit:format>N-Triples, RDF/XML, JSON</codit:format>
+        <codit:description>Relational triples representing head, relation, and tail entities.</codit:description>
+    </codit:InputData>
+
+    <!-- OutputData -->
+    <codit:OutputData rdf:about="http://example.org/data/EntityAlignmentsAndPredictions">
+        <codit:category>Entity Alignment and Link Predictions</codit:category>
+        <codit:format>RDF/XML, JSON</codit:format>
+        <codit:description>
+            Ranked entity alignments and predicted triples with associated scores.
+        </codit:description>
+    </codit:OutputData>
+
+    <!-- Features -->
+    <codit:Feature rdf:about="http://example.org/features/Scalability">
+        <codit:name>Scalability</codit:name>
+        <codit:description>Efficient handling of large-scale knowledge graphs.</codit:description>
+    </codit:Feature>
+
+    <!-- Performance Metrics -->
+    <codit:PerformanceMetric rdf:about="http://example.org/metrics/HitsAtK">
+        <codit:category>Ranking Metric</codit:category>
+        <codit:name>Hits@k</codit:name>
+        <codit:description>Measures how often the correct entity appears in the top-k candidates.</codit:description>
+    </codit:PerformanceMetric>
+
+    <codit:PerformanceMetric rdf:about="http://example.org/metrics/MRR">
+        <codit:category>Ranking Metric</codit:category>
+        <codit:name>Mean Reciprocal Rank (MRR)</codit:name>
+        <codit:description>
+            Average of reciprocal ranks for correct predictions.
+        </codit:description>
+    </codit:PerformanceMetric>
+
+    <!-- Training -->
+    <codit:TrainingSetting rdf:about="http://example.org/training/TransEdgeTraining">
+        <codit:hyperParameters>Learning rate, embedding dimensions, batch size</codit:hyperParameters>
+        <codit:iterations>Iterative bootstrapping and optimization with early stopping</codit:iterations>
+        <codit:usesAlgorithm rdf:resource="http://example.org/training/EdgeTranslationOptimization"/>
+    </codit:TrainingSetting>
+
+    <codit:TrainingAlgorithm rdf:about="http://example.org/training/EdgeTranslationOptimization">
+        <codit:name>Edge Translation Optimization</codit:name>
+        <codit:description>
+            Minimizes loss function based on relation-contextualized translations.
+        </codit:description>
+    </codit:TrainingAlgorithm>
+
+</rdf:RDF>
