@@ -1,0 +1,79 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:codit="http://example.org/codit#">
+
+    <!-- LinkingTool: LIMES -->
+    <codit:LinkingTool rdf:about="http://example.org/tools/LIMES">
+        <codit:name>LIMES</codit:name>
+        <codit:source>http://limes.sf.net</codit:source>
+        <codit:description>
+            LIMES (Link Discovery Framework for Metric Spaces) is a time-efficient framework for discovering links between knowledge bases on the Web of Data. It leverages mathematical properties, such as the triangle inequality, to reduce computational complexity during link discovery.
+        </codit:description>
+        <codit:configuration>
+            LIMES uses a configuration file to define the source and target knowledge bases, metrics, thresholds, and other parameters.
+        </codit:configuration>
+        <codit:requiresTraining>false</codit:requiresTraining>
+        <codit:usesTechnique rdf:resource="http://example.org/techniques/RuleBasedMethod"/>
+        <codit:acceptsData rdf:resource="http://example.org/data/StructuredRDF"/>
+        <codit:producesOutput rdf:resource="http://example.org/data/RDFLinks"/>
+        <codit:hasFeature rdf:resource="http://example.org/features/TriangleInequality"/>
+        <codit:hasFeature rdf:resource="http://example.org/features/ExemplarBasedFiltering"/>
+        <codit:evaluatedBy rdf:resource="http://example.org/metrics/TimeEfficiency"/>
+        <codit:hasDependency rdf:resource="http://example.org/dependencies/SPARQLSupport"/>
+    </codit:LinkingTool>
+
+    <!-- LinkingTechnique: Rule-Based Method -->
+    <codit:LinkingTechnique rdf:about="http://example.org/techniques/RuleBasedMethod">
+        <codit:name>Rule-Based Method</codit:name>
+        <codit:description>
+            A technique that uses predefined rules, such as metrics and thresholds, to determine entity matches during the link discovery process.
+        </codit:description>
+    </codit:LinkingTechnique>
+
+    <!-- InputData -->
+    <codit:InputData rdf:about="http://example.org/data/StructuredRDF">
+        <codit:category>Structured RDF</codit:category>
+        <codit:format>RDF</codit:format>
+        <codit:description>RDF data from Linked Data sources.</codit:description>
+    </codit:InputData>
+
+    <!-- OutputData -->
+    <codit:OutputData rdf:about="http://example.org/data/RDFLinks">
+        <codit:category>Identity Links</codit:category>
+        <codit:format>RDF</codit:format>
+        <codit:description>Links such as owl:sameAs connecting matching entities between datasets.</codit:description>
+    </codit:OutputData>
+
+    <!-- Feature: Triangle Inequality -->
+    <codit:Feature rdf:about="http://example.org/features/TriangleInequality">
+        <codit:name>Triangle Inequality</codit:name>
+        <codit:description>
+            A feature that uses the mathematical properties of metric spaces to compute lower and upper bounds of distances, enabling efficient filtering of instance pairs.
+        </codit:description>
+    </codit:Feature>
+
+    <!-- Feature: Exemplar-Based Filtering -->
+    <codit:Feature rdf:about="http://example.org/features/ExemplarBasedFiltering">
+        <codit:name>Exemplar-Based Filtering</codit:name>
+        <codit:description>
+            A feature that partitions the metric space into exemplars, allowing rough approximations to filter out unnecessary comparisons efficiently.
+        </codit:description>
+    </codit:Feature>
+
+    <!-- PerformanceMetric -->
+    <codit:PerformanceMetric rdf:about="http://example.org/metrics/TimeEfficiency">
+        <codit:category>Time Efficiency</codit:category>
+        <codit:name>Time Efficiency</codit:name>
+        <codit:description>
+            The metric focuses on the reduction of computational time and number of comparisons during the link discovery process.
+        </codit:description>
+    </codit:PerformanceMetric>
+
+    <!-- Dependency -->
+    <codit:Dependency rdf:about="http://example.org/dependencies/SPARQLSupport">
+        <codit:name>SPARQL Support</codit:name>
+        <codit:description>
+            Support for querying distributed datasets via SPARQL endpoints.
+        </codit:description>
+    </codit:Dependency>
+
+</rdf:RDF>
