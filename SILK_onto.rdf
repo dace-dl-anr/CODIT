@@ -1,0 +1,80 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:codit="http://example.org/codit#">
+
+    <!-- LinkingTool: Silk -->
+    <codit:LinkingTool rdf:about="http://example.org/tools/Silk">
+        <codit:name>Silk</codit:name>
+        <codit:source>http://silk.googlecode.com</codit:source>
+        <codit:description>A framework for discovering RDF links between Linked Data sources, supporting flexible and efficient link discovery processes.</codit:description>
+        <codit:configuration>Requires users to define linking conditions using the Link Specification Language (Silk-LSL).</codit:configuration>
+        <codit:requiresTraining>false</codit:requiresTraining>
+        <codit:usesTechnique rdf:resource="http://example.org/techniques/RuleBasedLinking"/>
+        <codit:acceptsData rdf:resource="http://example.org/data/StructuredRDF"/>
+        <codit:producesOutput rdf:resource="http://example.org/data/RDFLinks"/>
+        <codit:hasFeature rdf:resource="http://example.org/features/SilkLSL"/>
+        <codit:hasFeature rdf:resource="http://example.org/features/RoughIndexPrematching"/>
+        <codit:evaluatedBy rdf:resource="http://example.org/metrics/ScalabilityPerformance"/>
+        <codit:hasDependency rdf:resource="http://example.org/dependencies/Febrl"/>
+        <codit:hasDependency rdf:resource="http://example.org/dependencies/Xapian"/>
+    </codit:LinkingTool>
+
+    <!-- LinkingTechnique: Rule-Based Linking -->
+    <codit:LinkingTechnique rdf:about="http://example.org/techniques/RuleBasedLinking">
+        <codit:name>Rule-Based Linking</codit:name>
+        <codit:description>Allows defining rules using conditions and transformations to identify matching data items.</codit:description>
+    </codit:LinkingTechnique>
+
+    <!-- InputData -->
+    <codit:InputData rdf:about="http://example.org/data/StructuredRDF">
+        <codit:category>Structured RDF</codit:category>
+        <codit:format>RDF</codit:format>
+        <codit:description>RDF data from Linked Data sources.</codit:description>
+    </codit:InputData>
+
+    <!-- OutputData -->
+    <codit:OutputData rdf:about="http://example.org/data/RDFLinks">
+        <codit:category>Identity Links</codit:category>
+        <codit:format>RDF</codit:format>
+        <codit:description>Links such as owl:sameAs connecting matching entities between datasets.</codit:description>
+    </codit:OutputData>
+
+    <!-- Feature: Silk-LSL -->
+    <codit:Feature rdf:about="http://example.org/features/SilkLSL">
+        <codit:name>Link Specification Language (Silk-LSL)</codit:name>
+        <codit:description>A declarative language for defining complex linkage rules, including similarity metrics and transformations.</codit:description>
+    </codit:Feature>
+
+    <!-- Feature: Rough Index Prematching -->
+    <codit:Feature rdf:about="http://example.org/features/RoughIndexPrematching">
+        <codit:name>Rough Index Prematching</codit:name>
+        <codit:description>
+            A feature that uses indexing to limit the set of target entities likely to match a given source entity, avoiding the impractical runtime complexity of O(|S|·|T|).
+        </codit:description>
+    </codit:Feature>
+
+    <!-- PerformanceMetric -->
+    <codit:PerformanceMetric rdf:about="http://example.org/metrics/ScalabilityPerformance">
+        <codit:category>Scalability and Execution Performance</codit:category>
+        <codit:name>Scalability and execution performance</codit:name>
+        <codit:description>Metrics based on the ability to process large datasets efficiently and effectively.</codit:description>
+    </codit:PerformanceMetric>
+
+    <!-- Dependencies -->
+    <codit:Dependency rdf:about="http://example.org/dependencies/Febrl">
+        <codit:name>Febrl</codit:name>
+        <codit:description>The Freely Extensible Biomedical Record Linkage toolkit used for calculating string similarities.</codit:description>
+        <codit:source>http://sourceforge.net/projects/febrl</codit:source>
+    </codit:Dependency>
+
+    <codit:Dependency rdf:about="http://example.org/dependencies/Xapian">
+        <codit:name>Xapian</codit:name>
+        <codit:description>A search engine library used for Silk's prematching features.</codit:description>
+        <codit:source>http://xapian.org</codit:source>
+    </codit:Dependency>
+
+    <!-- MatchingCriterion -->
+    <codit:MatchingCriterion rdf:about="http://example.org/criteria/AttributeSimilarity">
+        <codit:name>Attribute Similarity</codit:name>
+    </codit:MatchingCriterion>
+
+</rdf:RDF>
