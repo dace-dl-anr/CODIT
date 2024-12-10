@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -6,11 +7,14 @@
     <!-- Classes -->
     <owl:Class rdf:about="ex:LinkingTool"/>
     <owl:Class rdf:about="ex:LinkingMethod"/>
+    <owl:Class rdf:about="ex:LinkingTechnique"/>
     <owl:Class rdf:about="ex:InputData"/>
     <owl:Class rdf:about="ex:OutputData"/>
     <owl:Class rdf:about="ex:Feature"/>
     <owl:Class rdf:about="ex:MatchingCriterion"/>
+    <owl:Class rdf:about="ex:ApplicationDomain"/>
     <owl:Class rdf:about="ex:PerformanceMetric"/>
+    <owl:Class rdf:about="ex:KeyBasedMethod"/>
 
     <!-- LinkingTool: Linkex -->
     <owl:NamedIndividual rdf:about="ex:Linkex">
@@ -18,108 +22,94 @@
         <ex:name>Linkex</ex:name>
         <ex:version>1.0</ex:version>
         <ex:developer>INRIA</ex:developer>
-        <ex:source>https://gitlab.inria.fr/moex/linkex</ex:source>
-        <ex:description>
-            A robust data interlinking tool focusing on linkkey extraction. It identifies unique pairs of entities across datasets using supervised and unsupervised measures to select candidate linkkeys, leveraging precision, recall, discriminability, and coverage metrics.
-        </ex:description>
-        <ex:configuration>Supervised and unsupervised candidate linkkey selection configurations.</ex:configuration>
-        <ex:requiresTraining>false</ex:requiresTraining>
-        <ex:usesMethod rdf:resource="ex:KeyBasedMethod"/>
+        <ex:description>A data interlinking tool focusing on linkkey extraction, which identifies unique pairs of entities across datasets by assessing shared attribute values and validating candidate linkkeys.</ex:description>
+        <ex:usesMethod rdf:resource="ex:RelaxedKeyBasedMethod"/>
+        <ex:usesCriterion rdf:resource="ex:InEqAttributeComparison"/>
         <ex:acceptsData rdf:resource="ex:RDFData"/>
         <ex:producesOutput rdf:resource="ex:IdentityLink"/>
-        <ex:hasFeature rdf:resource="ex:LinkkeyGeneration"/>
-        <ex:hasFeature rdf:resource="ex:DataRobustness"/>
-        <ex:usesCriterion rdf:resource="ex:AttributeSimilarity"/>
+        <ex:hasFeature rdf:resource="ex:Scalability"/>
+        <ex:hasFeature rdf:resource="ex:Explainability"/>
+        <ex:usesCriterion rdf:resource="ex:KeyMatching"/>
         <ex:evaluatedBy rdf:resource="ex:Precision"/>
         <ex:evaluatedBy rdf:resource="ex:Recall"/>
-        <ex:evaluatedBy rdf:resource="ex:Discriminability"/>
-        <ex:evaluatedBy rdf:resource="ex:Coverage"/>
     </owl:NamedIndividual>
 
-    <!-- LinkingMethod: Key-Based Method -->
+    <!-- LinkingMethod Subclass: Key-Based Method -->
     <owl:Class rdf:about="ex:KeyBasedMethod">
-        <rdfs:subClassOf rdf:resource="ex:LinkingMethod"/>
+        <rdfs:subClassOf rdf:resource="ex:LinkingTechnique"/>
+        <rdfs:comment>A linking method that generates keys and uses them for entity matching across datasets.</rdfs:comment>
     </owl:Class>
 
-    <!-- InputData -->
-    <owl:Class rdf:about="ex:RDFData">
-        <rdfs:subClassOf rdf:resource="ex:InputData"/>
-    </owl:Class>
-    <ex:RDFData rdf:about="ex:RDFData">
+    <!-- InputData: RDFData -->
+    <owl:NamedIndividual rdf:about="ex:RDFData">
+        <rdf:type rdf:resource="ex:InputData"/>
         <ex:dataType>RDF</ex:dataType>
         <ex:format>N-Triples, Turtle, RDF/XML</ex:format>
-    </ex:RDFData>
+    </owl:NamedIndividual>
 
-    <!-- OutputData -->
-    <owl:Class rdf:about="ex:IdentityLink">
-        <rdfs:subClassOf rdf:resource="ex:OutputData"/>
-    </owl:Class>
-    <ex:IdentityLink rdf:about="ex:IdentityLink">
+    <!-- OutputData: IdentityLink -->
+    <owl:NamedIndividual rdf:about="ex:IdentityLink">
+        <rdf:type rdf:resource="ex:OutputData"/>
         <ex:dataType>Link</ex:dataType>
         <ex:format>OWL:sameAs</ex:format>
-    </ex:IdentityLink>
+    </owl:NamedIndividual>
 
-    <!-- Features -->
-    <owl:Class rdf:about="ex:LinkkeyGeneration">
-        <rdfs:subClassOf rdf:resource="ex:Feature"/>
-    </owl:Class>
-    <ex:LinkkeyGeneration rdf:about="ex:LinkkeyGeneration">
-        <ex:name>Linkkey Generation</ex:name>
-        <ex:description>
-            Generates candidate linkkeys by identifying property pairs across datasets that match linked entities.
-        </ex:description>
-    </ex:LinkkeyGeneration>
+    <!-- Feature: Scalability -->
+    <owl:NamedIndividual rdf:about="ex:Scalability">
+        <rdf:type rdf:resource="ex:Feature"/>
+        <ex:name>Scalability</ex:name>
+        <ex:description>Supports processing large datasets.</ex:description>
+    </owl:NamedIndividual>
 
-    <owl:Class rdf:about="ex:DataRobustness">
-        <rdfs:subClassOf rdf:resource="ex:Feature"/>
-    </owl:Class>
-    <ex:DataRobustness rdf:about="ex:DataRobustness">
-        <ex:name>Data Robustness</ex:name>
-        <ex:description>
-            Maintains performance under data perturbations, such as missing values or noisy data.
-        </ex:description>
-    </ex:DataRobustness>
+    <!-- Feature: Explainability -->
+    <owl:NamedIndividual rdf:about="ex:Explainability">
+        <rdf:type rdf:resource="ex:Feature"/>
+        <ex:name>Explainability</ex:name>
+        <ex:description>Provides explanations for link key matching decisions.</ex:description>
+    </owl:NamedIndividual>
 
-    <!-- MatchingCriterion -->
-    <owl:Class rdf:about="ex:AttributeSimilarity">
-        <rdfs:subClassOf rdf:resource="ex:MatchingCriterion"/>
-    </owl:Class>
-    <ex:AttributeSimilarity rdf:about="ex:AttributeSimilarity">
-        <ex:criterionName>Attribute Similarity</ex:criterionName>
-        <ex:description>Evaluates entities based on property value similarity.</ex:description>
-    </ex:AttributeSimilarity>
+    <owl:NamedIndividual rdf:about="ex:RelaxedKeyBasedMethod">
+        <rdf:type rdf:resource="ex:KeyBasedMethod"/>
+        <ex:name>Relaxed Key-Based Method</ex:name>
+        <ex:description>A variation of the key-based method that applies normalization techniques, such as removing whitespace or standardizing formats, to ensure better matching of entity keys across datasets.</ex:description>
+        <ex:keyMatchingCriteria>Uses normalization techniques before checking exact match</ex:keyMatchingCriteria>
+    </owl:NamedIndividual>
 
-    <!-- PerformanceMetric -->
-    <owl:Class rdf:about="ex:Precision">
-        <rdfs:subClassOf rdf:resource="ex:PerformanceMetric"/>
-    </owl:Class>
-    <ex:Precision rdf:about="ex:Precision">
+    <owl:NamedIndividual rdf:about="ex:InEqAttributeComparison">
+        <rdf:type rdf:resource="ex:AttributeComparison"/>
+        <ex:criterionName>In/Eq</ex:criterionName>
+        <ex:description>Matches based on exact equality or intersection of attributes.</ex:description>
+    </owl:NamedIndividual>
+
+
+    <!-- PerformanceMetric: Precision -->
+    <owl:NamedIndividual rdf:about="ex:Precision">
+        <rdf:type rdf:resource="ex:PerformanceMetric"/>
+        <ex:kind>Supervised</ex:kind>
         <ex:metricName>Precision</ex:metricName>
-        <ex:description>Measures the correctness of link generation.</ex:description>
-    </ex:Precision>
+        <ex:description>Measures the accuracy of link generation.</ex:description>
+    </owl:NamedIndividual>
 
-    <owl:Class rdf:about="ex:Recall">
-        <rdfs:subClassOf rdf:resource="ex:PerformanceMetric"/>
-    </owl:Class>
-    <ex:Recall rdf:about="ex:Recall">
+    <!-- PerformanceMetric: Recall -->
+    <owl:NamedIndividual rdf:about="ex:Recall">
+        <rdf:type rdf:resource="ex:PerformanceMetric"/>
+        <ex:kind>Supervised</ex:kind>
         <ex:metricName>Recall</ex:metricName>
         <ex:description>Measures the completeness of link generation.</ex:description>
-    </ex:Recall>
+    </owl:NamedIndividual>
 
-    <owl:Class rdf:about="ex:Discriminability">
-        <rdfs:subClassOf rdf:resource="ex:PerformanceMetric"/>
-    </owl:Class>
-    <ex:Discriminability rdf:about="ex:Discriminability">
+        <owl:NamedIndividual rdf:about="ex:Discriminability">
+        <rdf:type rdf:resource="ex:PerformanceMetric"/>
+        <ex:kind>Non-Supervised</ex:kind>
         <ex:metricName>Discriminability</ex:metricName>
-        <ex:description>Measures how close links are to a one-to-one mapping.</ex:description>
-    </ex:Discriminability>
+        <ex:description>Measures the ability of the link key to generate 1 to 1 links.</ex:description>
+    </owl:NamedIndividual>
 
-    <owl:Class rdf:about="ex:Coverage">
-        <rdfs:subClassOf rdf:resource="ex:PerformanceMetric"/>
-    </owl:Class>
-    <ex:Coverage rdf:about="ex:Coverage">
+    <!-- PerformanceMetric: Recall -->
+    <owl:NamedIndividual rdf:about="ex:Coverage">
+        <rdf:type rdf:resource="ex:PerformanceMetric"/>
+        <ex:kind>Non-Supervised</ex:kind>
         <ex:metricName>Coverage</ex:metricName>
-        <ex:description>Measures the proportion of entities linked by a candidate linkkey.</ex:description>
-    </ex:Coverage>
-
+        <ex:description>Measures the ability of the link key to generate links.</ex:description>
+    </owl:NamedIndividual>
 </rdf:RDF>
