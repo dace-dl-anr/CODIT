@@ -236,6 +236,42 @@
     
 
 
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#dimensionality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#dimensionality">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#EmbeddingBasedMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Represents the number of dimensions in the embedding space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Dimensionality</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#embeddingAlgorithm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#embeddingAlgorithm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#EmbeddingBasedMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the algorithm used for generating embeddings, such as Word2Vec, BERT, or TransE.</rdfs:comment>
+        <rdfs:label xml:lang="en">Embedding Algorithm</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#fineTuning -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#fineTuning">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LLMMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Indicates whether the large language model has been fine-tuned on specific data for the entity matching task.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fine-Tuning</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#format -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#format">
@@ -280,6 +316,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#keyMatchinCriteria -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#keyMatchinCriteria">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#keyBasedMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Describes the criteria used to match keys, such as exact match or approximate match.</rdfs:comment>
+        <rdfs:label xml:lang="en">Key Matching Criteria</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#kind -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#kind">
@@ -288,6 +336,18 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Describes the kind of the evaluation metric used, i.e., supervised or un-supervised.</rdfs:comment>
         <rdfs:label xml:lang="en">Kind</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#modelType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#modelType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MachineLearningMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Indicates the type of machine learning model used, such as decision trees, neural networks, or support vector machines.</rdfs:comment>
+        <rdfs:label xml:lang="en">Model Type</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -318,6 +378,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#promptDesign -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#promptDesign">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LLMMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Describes the structure of the prompts used to interact with the large language model, such as zero-shot or few-shot prompting.</rdfs:comment>
+        <rdfs:label xml:lang="en">Prompt Design</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#requiresTraining -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#requiresTraining">
@@ -326,6 +398,18 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment xml:lang="en">A boolean used to indicate wether the linking tool requires training or not.</rdfs:comment>
         <rdfs:label xml:lang="en">Requires training</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#ruleDefinitionLanguage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#ruleDefinitionLanguage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#RuleBasedMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the language or framework used to define rules, such as SPARQL or SQL.</rdfs:comment>
+        <rdfs:label xml:lang="en">Rule Definition Language</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -447,6 +531,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LLMMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LLMMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+        <rdfs:comment xml:lang="en">A linking technique that leverages large language models (LLMs) for entity matching.</rdfs:comment>
+        <rdfs:label xml:lang="en">LLM Method</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingProbemType -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingProbemType">
@@ -542,6 +636,30 @@
     <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#TrainingData">
         <rdfs:label xml:lang="en">Training Data</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#keyBasedMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#keyBasedMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTechnique"/>
+        <rdfs:comment xml:lang="en">A method that aims at generating keys and using them for EM.</rdfs:comment>
+        <rdfs:label xml:lang="en">Key Based Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#deprecated">
+        <rdfs:comment xml:lang="en">Describes the criteria used to match keys, such as exact match or approximate match.</rdfs:comment>
+    </rdf:Description>
 </rdf:RDF>
 
 
