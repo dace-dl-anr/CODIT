@@ -1,80 +1,96 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:codit="http://example.org/codit#">
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:ex="http://example.org/ontology#">
 
-    <!-- LinkingTool: Silk -->
-    <codit:LinkingTool rdf:about="http://example.org/tools/Silk">
-        <codit:name>Silk</codit:name>
-        <codit:source>http://silk.googlecode.com</codit:source>
-        <codit:description>A framework for discovering RDF links between Linked Data sources, supporting flexible and efficient link discovery processes.</codit:description>
-        <codit:configuration>Requires users to define linking conditions using the Link Specification Language (Silk-LSL).</codit:configuration>
-        <codit:requiresTraining>false</codit:requiresTraining>
-        <codit:usesTechnique rdf:resource="http://example.org/techniques/RuleBasedLinking"/>
-        <codit:acceptsData rdf:resource="http://example.org/data/StructuredRDF"/>
-        <codit:producesOutput rdf:resource="http://example.org/data/RDFLinks"/>
-        <codit:hasFeature rdf:resource="http://example.org/features/SilkLSL"/>
-        <codit:hasFeature rdf:resource="http://example.org/features/RoughIndexPrematching"/>
-        <codit:evaluatedBy rdf:resource="http://example.org/metrics/ScalabilityPerformance"/>
-        <codit:hasDependency rdf:resource="http://example.org/dependencies/Febrl"/>
-        <codit:hasDependency rdf:resource="http://example.org/dependencies/Xapian"/>
-    </codit:LinkingTool>
+    <!-- Classes -->
+    <owl:Class rdf:about="ex:LinkingTool">
+        <rdfs:comment>Represents tools used for data interlinking.</rdfs:comment>
+    </owl:Class>
 
-    <!-- LinkingTechnique: Rule-Based Linking -->
-    <codit:LinkingTechnique rdf:about="http://example.org/techniques/RuleBasedLinking">
-        <codit:name>Rule-Based Linking</codit:name>
-        <codit:description>Allows defining rules using conditions and transformations to identify matching data items.</codit:description>
-    </codit:LinkingTechnique>
+    <owl:Class rdf:about="ex:LinkingMethod">
+        <rdfs:comment>Represents methods used for linking entities across datasets.</rdfs:comment>
+    </owl:Class>
 
-    <!-- InputData -->
-    <codit:InputData rdf:about="http://example.org/data/StructuredRDF">
-        <codit:category>Structured RDF</codit:category>
-        <codit:format>RDF</codit:format>
-        <codit:description>RDF data from Linked Data sources.</codit:description>
-    </codit:InputData>
+    <owl:Class rdf:about="ex:RDFData">
+        <rdfs:subClassOf rdf:resource="ex:InputData"/>
+        <rdfs:comment>Data in RDF format that serves as input for linking tools.</rdfs:comment>
+    </owl:Class>
 
-    <!-- OutputData -->
-    <codit:OutputData rdf:about="http://example.org/data/RDFLinks">
-        <codit:category>Identity Links</codit:category>
-        <codit:format>RDF</codit:format>
-        <codit:description>Links such as owl:sameAs connecting matching entities between datasets.</codit:description>
-    </codit:OutputData>
+    <owl:Class rdf:about="ex:PathBasedSelection">
+        <rdfs:subClassOf rdf:resource="ex:LinkingMethod"/>
+        <rdfs:comment>Methods leveraging paths in RDF graphs for similarity evaluation.</rdfs:comment>
+    </owl:Class>
 
-    <!-- Feature: Silk-LSL -->
-    <codit:Feature rdf:about="http://example.org/features/SilkLSL">
-        <codit:name>Link Specification Language (Silk-LSL)</codit:name>
-        <codit:description>A declarative language for defining complex linkage rules, including similarity metrics and transformations.</codit:description>
-    </codit:Feature>
+    <owl:Class rdf:about="ex:IdentityLink">
+        <rdfs:subClassOf rdf:resource="ex:OutputData"/>
+        <rdfs:comment>Links created to identify equivalent entities across datasets.</rdfs:comment>
+    </owl:Class>
 
-    <!-- Feature: Rough Index Prematching -->
-    <codit:Feature rdf:about="http://example.org/features/RoughIndexPrematching">
-        <codit:name>Rough Index Prematching</codit:name>
-        <codit:description>
-            A feature that uses indexing to limit the set of target entities likely to match a given source entity, avoiding the impractical runtime complexity of O(|S|·|T|).
-        </codit:description>
-    </codit:Feature>
+    <owl:Class rdf:about="ex:InputData">
+        <rdfs:comment>Represents input data types for linking tools.</rdfs:comment>
+    </owl:Class>
 
-    <!-- PerformanceMetric -->
-    <codit:PerformanceMetric rdf:about="http://example.org/metrics/ScalabilityPerformance">
-        <codit:category>Scalability and Execution Performance</codit:category>
-        <codit:name>Scalability and execution performance</codit:name>
-        <codit:description>Metrics based on the ability to process large datasets efficiently and effectively.</codit:description>
-    </codit:PerformanceMetric>
+    <owl:Class rdf:about="ex:OutputData">
+        <rdfs:comment>Represents the output produced by linking tools.</rdfs:comment>
+    </owl:Class>
 
-    <!-- Dependencies -->
-    <codit:Dependency rdf:about="http://example.org/dependencies/Febrl">
-        <codit:name>Febrl</codit:name>
-        <codit:description>The Freely Extensible Biomedical Record Linkage toolkit used for calculating string similarities.</codit:description>
-        <codit:source>http://sourceforge.net/projects/febrl</codit:source>
-    </codit:Dependency>
+    <!-- Named Individuals -->
+    <owl:NamedIndividual rdf:about="ex:Silk">
+        <rdf:type rdf:resource="ex:LinkingTool"/>
+        <ex:name>Silk – A Link Discovery Framework</ex:name>
+        <ex:version>1.0</ex:version>
+        <ex:developer>Julius Volz, Martin Gaedke, Georgi Kobilarov, Christian Bizer</ex:developer>
+        <ex:description>A framework for creating RDF links between datasets using a declarative language.</ex:description>
+        <ex:usesTechnique rdf:resource="ex:PathBasedSelection"/>
+        <ex:acceptsData rdf:resource="ex:RDFData"/>
+        <ex:producesOutput rdf:resource="ex:IdentityLink"/>
+        <ex:hasFeature rdf:resource="ex:Scalability"/>
+        <ex:hasFeature rdf:resource="ex:MultilingualSupport"/>
+        <ex:hasDependency rdf:resource="http://xapian.org"/>
+    </owl:NamedIndividual>
 
-    <codit:Dependency rdf:about="http://example.org/dependencies/Xapian">
-        <codit:name>Xapian</codit:name>
-        <codit:description>A search engine library used for Silk's prematching features.</codit:description>
-        <codit:source>http://xapian.org</codit:source>
-    </codit:Dependency>
+    <owl:NamedIndividual rdf:about="http://xapian.org">
+        <rdf:type rdf:resource="ex:Dependency"/>
+        <ex:name>Xapian</ex:name>
+        <ex:description>A search engine library for indexing and query operations.</ex:description>
+    </owl:NamedIndividual>
 
-    <!-- MatchingCriterion -->
-    <codit:MatchingCriterion rdf:about="http://example.org/criteria/AttributeSimilarity">
-        <codit:name>Attribute Similarity</codit:name>
-    </codit:MatchingCriterion>
+    <!-- Features -->
+    <owl:Class rdf:about="ex:Feature">
+        <rdfs:comment>Represents features or capabilities of linking tools.</rdfs:comment>
+    </owl:Class>
 
+    <owl:NamedIndividual rdf:about="ex:Scalability">
+        <rdf:type rdf:resource="ex:Feature"/>
+        <ex:description>Supports large-scale datasets.</ex:description>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="ex:MultilingualSupport">
+        <rdf:type rdf:resource="ex:Feature"/>
+        <ex:description>Handles multiple languages effectively.</ex:description>
+    </owl:NamedIndividual>
+
+    <!-- Matching Criteria -->
+    <owl:Class rdf:about="ex:MatchingCriterion">
+        <rdfs:comment>Represents criteria used for linking entities in datasets.</rdfs:comment>
+    </owl:Class>
+
+    <owl:NamedIndividual rdf:about="ex:PathBasedSelection">
+        <rdf:type rdf:resource="ex:LinkingMethod"/>
+        <ex:description>Path-based similarity is calculated by traversing RDF graph structures.</ex:description>
+    </owl:NamedIndividual>
+
+    <!-- Input and Output Data -->
+    <owl:NamedIndividual rdf:about="ex:RDFData">
+        <rdf:type rdf:resource="ex:InputData"/>
+        <ex:format>N-Triples, Turtle, RDF/XML</ex:format>
+        <ex:description>Data in RDF format used as input for linking tools.</ex:description>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="ex:IdentityLink">
+        <rdf:type rdf:resource="ex:OutputData"/>
+        <ex:format>owl:sameAs</ex:format>
+        <ex:description>Links asserting equivalence between entities.</ex:description>
+    </owl:NamedIndividual>
 </rdf:RDF>
