@@ -17,9 +17,9 @@
         <rdfs:comment>Data in RDF format that serves as input for linking tools.</rdfs:comment>
     </owl:Class>
 
-    <owl:Class rdf:about="ex:PathBasedSelection">
+    <owl:Class rdf:about="ex:RuleBasedMethod">
         <rdfs:subClassOf rdf:resource="ex:LinkingMethod"/>
-        <rdfs:comment>Methods leveraging paths in RDF graphs for similarity evaluation.</rdfs:comment>
+        <rdfs:comment>A technique based on predefined rules to link entities.</rdfs:comment>
     </owl:Class>
 
     <owl:Class rdf:about="ex:IdentityLink">
@@ -42,11 +42,14 @@
         <ex:version>1.0</ex:version>
         <ex:developer>Julius Volz, Martin Gaedke, Georgi Kobilarov, Christian Bizer</ex:developer>
         <ex:description>A framework for creating RDF links between datasets using a declarative language.</ex:description>
-        <ex:usesTechnique rdf:resource="ex:PathBasedSelection"/>
+        <ex:source>http://silk.googlecode.com</ex:source>
+        <ex:usesTechnique rdf:resource="ex:LSL"/>
         <ex:acceptsData rdf:resource="ex:RDFData"/>
         <ex:producesOutput rdf:resource="ex:IdentityLink"/>
-        <ex:hasFeature rdf:resource="ex:Scalability"/>
-        <ex:hasFeature rdf:resource="ex:MultilingualSupport"/>
+        <ex:hasFeature rdf:resource="ex:DataStreaming"/>
+        <ex:hasFeature rdf:resource="ex:ConfigurableMetrics"/>
+        <ex:hasFeature rdf:resource="ex:SchemaIndependent"/>
+        <ex:hasFeature rdf:resource="ex:PerformanceOptimization"/>
         <ex:hasDependency rdf:resource="http://xapian.org"/>
     </owl:NamedIndividual>
 
@@ -56,19 +59,39 @@
         <ex:description>A search engine library for indexing and query operations.</ex:description>
     </owl:NamedIndividual>
 
+    <owl:NamedIndividual rdf:about="ex:LSL">
+        <rdf:type rdf:resource="ex:RuleBasedMethod"/>
+        <ex:name>Link Specification Language</ex:name>
+        <ex:description>Declarative language where users can specify the conditions for matching entities.</ex:description>
+    </owl:NamedIndividual>
+
     <!-- Features -->
     <owl:Class rdf:about="ex:Feature">
         <rdfs:comment>Represents features or capabilities of linking tools.</rdfs:comment>
     </owl:Class>
 
-    <owl:NamedIndividual rdf:about="ex:Scalability">
+    <owl:NamedIndividual rdf:about="ex:DataStreaming">
         <rdf:type rdf:resource="ex:Feature"/>
-        <ex:description>Supports large-scale datasets.</ex:description>
+        <ex:name>Data Streaming</ex:name>
+        <ex:description>Does not need to replicate the data.</ex:description>
     </owl:NamedIndividual>
 
-    <owl:NamedIndividual rdf:about="ex:MultilingualSupport">
+    <owl:NamedIndividual rdf:about="ex:ConfigurableMetrics">
         <rdf:type rdf:resource="ex:Feature"/>
-        <ex:description>Handles multiple languages effectively.</ex:description>
+        <ex:name>Configurable Metrics</ex:name>
+        <ex:description>Specifying similarity metric through link conditions.</ex:description>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="ex:SchemaIndependent">
+        <rdf:type rdf:resource="ex:Feature"/>
+        <ex:name>Schema Independent</ex:name>
+        <ex:description>Used when no vocabulary is available or when different vocabularies are used.</ex:description>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="ex:PerformanceOptimization">
+        <rdf:type rdf:resource="ex:Feature"/>
+        <ex:name>Performance Optimization</ex:name>
+        <ex:description>Implementing various caching, indexing, entity pre-selection methods to increase performance and reduce network load.</ex:description>
     </owl:NamedIndividual>
 
     <!-- Matching Criteria -->
@@ -76,10 +99,6 @@
         <rdfs:comment>Represents criteria used for linking entities in datasets.</rdfs:comment>
     </owl:Class>
 
-    <owl:NamedIndividual rdf:about="ex:PathBasedSelection">
-        <rdf:type rdf:resource="ex:LinkingMethod"/>
-        <ex:description>Path-based similarity is calculated by traversing RDF graph structures.</ex:description>
-    </owl:NamedIndividual>
 
     <!-- Input and Output Data -->
     <owl:NamedIndividual rdf:about="ex:RDFData">
