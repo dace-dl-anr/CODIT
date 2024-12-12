@@ -1,1 +1,92 @@
+<rdf:RDF xmlns="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#"
+     xml:base="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools/"
+     xmlns:rdf="http://www.w3.org/1999/02/rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 
+    <!-- Instance of LinkingTool -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#BERT-INT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#LinkingTool"/>
+        <configuration>BERT model fine-tuned for comparing names, descriptions, and attributes of entities.</configuration>
+        <developer>Xiaobin Tang et al.</developer>
+        <version>1.0</version>
+        <name>BERT-INT</name>
+        <source>https://github.com/kosugi11037/bert-int/tree/master/interaction_model</source>
+        <requiresTraining rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</requiresTraining>
+        <acceptsData rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OrganizedDataFiles"/>
+        <producesOutput rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#IdentityLink"/>
+        <usesTechnique rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#EmbeddingBasedMethod"/>
+        <usesTechnique rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MachineLearningMethod"/>
+        <usesCriteria rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#AttributeSimilarity"/>
+        <usesCriteria rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#GraphTraversal"/>
+        <hasFeature rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InductiveLearning"/>
+        <hasFeature rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#FineGrainedInteraction"/>
+        <evaluatedBy rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#HitRatio"/>
+    </owl:NamedIndividual>
+
+    <!-- Instance of InputData -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OrganizedDataFiles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InputData"/>
+        <format>JSON</format>
+        <category>Structured</category>
+        <description>Input data includes entity names, attributes, and descriptions from knowledge graphs.</description>
+    </owl:NamedIndividual>
+
+    <!-- Instance of OutputData -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#IdentityLink">
+        <rdf:type rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#OutputData"/>
+        <format>turtle</format>
+        <category>Structured</category>
+        <description>Output includes matched entity pairs across knowledge graphs.</description>
+    </owl:NamedIndividual>
+
+    <!-- Instance of Feature -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#InductiveLearning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Feature"/>
+        <name>Inductive Learning</name>
+        <comment>Ability to generalize to unseen entities, distinguishing it from graph-aggregation models.</comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#FineGrainedInteraction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#Feature"/>
+        <name>Fine-Grained Interaction</name>
+        <comment>Uses BERT's attention mechanisms to model intricate interactions between names, attributes, and descriptions.</comment>
+    </owl:NamedIndividual>
+
+    <!-- Instance of TrainingData -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#TrainingData">
+        <rdf:type rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#TrainingData"/>
+        <format>Annotated entity pairs for alignment</format>
+        <category>Structured</category>
+        <comment>Labeled data used to fine-tune the BERT-INT model.</comment>
+    </owl:NamedIndividual>
+
+    <!-- Instance of TrainingAlgorithm -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#BERT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#TrainingAlgorithm"/>
+        <name>BERT</name>
+        <comment>Transformer-based language model pretrained on large corpora, fine-tuned for entity alignment tasks.</comment>
+    </owl:NamedIndividual>
+
+    <!-- Instance of MatchingCriterion -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#AttributeSimilarity">
+        <rdf:type rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MatchingCriterion"/>
+        <name>Attribute Similarity</name>
+        <comment>Compares entity attributes such as names and descriptions for similarity.</comment>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#GraphTraversal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#MatchingCriterion"/>
+        <name>Graph Traversal</name>
+        <comment>Uses graph structures to identify relationships and connections between entities.</comment>
+    </owl:NamedIndividual>
+
+    <!-- Instance of PerformanceMetric -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#HitRatio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/khadijajradeh/ontologies/2024/10/OntologyDITools#PerformanceMetric"/>
+        <name>Hit Ratio</name>
+        <kind>Supervised</kind>
+        <comment>Evaluation metric that measures alignment accuracy of the top-ranked entity pair.</comment>
+    </owl:NamedIndividual>
+</rdf:RDF>
