@@ -22,9 +22,5 @@ We welcome contributions to expand and refine the CODIT ontology. Contributions 
 
 For inquiries or further information, please contact:
 
-- **Chloé Jradeh**: [jradehkadi@gmail.com](mailto:jradehkadi@gmail.com)  
-- **Konstantin Todorov**: [konstantin.get@gmail.com](mailto:konstantin.get@gmail.com)  
-- **Cassia Trojahn**: [Cassia.Trojahn@irit.fr](mailto:Cassia.Trojahn@irit.fr)  
-
 
 
