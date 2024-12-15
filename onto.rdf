@@ -1,0 +1,672 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/CODIT/"
+     xml:base="http://www.semanticweb.org/CODIT/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:OntologyDITools="http://www.semanticweb.org/CODIT#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/CODIT">
+        <dc:rights xml:lang="en">https://creativecommons.org/licenses/by/4.0/</dc:rights>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#deprecated -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#deprecated">
+        <rdfs:comment xml:lang="en">The types of keys used for data interlinking typically include: primary key, composite key, almost key, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Form of the key</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#keyBasedMethod"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#acceptsData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/CODIT#acceptsData">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/CODIT#InputData"/>
+        <rdfs:comment xml:lang="en">Describes the data formats and types the tool can accept.</rdfs:comment>
+        <rdfs:label xml:lang="en">Accepts data</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#appliedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/CODIT#appliedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/CODIT#LinkingProbemType"/>
+        <rdfs:comment xml:lang="en">Links the tool to the domains (e.g., healthcare, e-commerce) where it is applied.</rdfs:comment>
+        <rdfs:label xml:lang="en">Applied in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#evaluatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/CODIT#evaluatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/CODIT#PerformanceMetric"/>
+        <rdfs:comment xml:lang="en">Relates the tool to the metrics by which it is evaluated (e.g., precision, recall).</rdfs:comment>
+        <rdfs:label xml:lang="en">Evaluated by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#hasDependency -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/CODIT#hasDependency">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/CODIT#Dependency"/>
+        <rdfs:comment xml:lang="en">Describes any external resources necessary for the tool to function.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has dependency</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#hasFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/CODIT#hasFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/CODIT#Feature"/>
+        <rdfs:comment xml:lang="en">Associates the tool with specific features that it provides.</rdfs:comment>
+        <rdfs:label xml:lang="en">Has feature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#producesOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/CODIT#producesOutput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/CODIT#OutputData"/>
+        <rdfs:comment xml:lang="en">Links the tool to the resulting output format (e.g., RDF, JSON).</rdfs:comment>
+        <rdfs:label xml:lang="en">Produces output</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#suitedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/CODIT#suitedFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/CODIT#LinkingProbemType"/>
+        <rdfs:comment xml:lang="en">Connects the tool to tasks it can handle (e.g., large-scale data, different-format data).</rdfs:comment>
+        <rdfs:label xml:lang="en">Suited for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#usesAlgorithm -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/CODIT#usesAlgorithm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#Training"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/CODIT#TrainingAlgorithm"/>
+        <rdfs:comment xml:lang="en">Associate the tool with the training algorithm it uses.</rdfs:comment>
+        <rdfs:label xml:lang="en">Uses algorithm</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#usesData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/CODIT#usesData">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#Training"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/CODIT#TrainingData"/>
+        <rdfs:comment xml:lang="en">Links the tool with the training data it uses.</rdfs:comment>
+        <rdfs:label xml:lang="en">Uses data</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#usesTechnique -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/CODIT#usesTechnique">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/CODIT#LinkingTechnique"/>
+        <rdfs:comment xml:lang="en">Links the tool to the techniques it implements.</rdfs:comment>
+        <rdfs:label xml:lang="en">Uses technique</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#AxiomGenCriteria -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#AxiomGenCriteria">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#Symbolic"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The criteria used to generate axiom i.e., rules of keys.</rdfs:comment>
+        <rdfs:label xml:lang="en">Axiom Generation Criteria</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#LinkGenCriteria -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#LinkGenCriteria">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#NonSymbolic"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The fundamental reasons behined link generation.</rdfs:comment>
+        <rdfs:label xml:lang="en">Link Generation Criteria</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#category -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#category">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#InputData"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#OutputData"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#TrainingData"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The type of the data, applicable to both input and output, such as structured, semi-structured, or unstructured.&quot;</rdfs:comment>
+        <rdfs:label xml:lang="en">Category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#configuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#configuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the parameters or settings required to configure the tool.</rdfs:comment>
+        <rdfs:label xml:lang="en">Configuration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#description">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#ApplicationDomain"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#Dependency"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#Feature"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#InputData"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#LinkingProbemType"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#LinkingTechnique"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#LinkingTool"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#OutputData"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#PerformanceMetric"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#TrainingAlgorithm"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#TrainingData"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The description of various components.&quot;</rdfs:comment>
+        <rdfs:label xml:lang="en">Category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#developer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#developer">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#Dependency"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#LinkingTool"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Identifies the developer or organization responsible for the tool&apos;s development.</rdfs:comment>
+        <rdfs:label xml:lang="en">Developer</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#dimensionality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#dimensionality">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#EmbeddingBasedMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Represents the number of dimensions in the embedding space.</rdfs:comment>
+        <rdfs:label xml:lang="en">Dimensionality</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#embeddingAlgorithm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#embeddingAlgorithm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#EmbeddingBasedMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the algorithm used for generating embeddings, such as Word2Vec, BERT, or TransE.</rdfs:comment>
+        <rdfs:label xml:lang="en">Embedding Algorithm</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#fineTuning -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#fineTuning">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LLMMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Indicates whether the large language model has been fine-tuned on specific data for the entity matching task.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fine-Tuning</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#format -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#format">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#InputData"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#OutputData"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#TrainingData"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specify the format of the data.</rdfs:comment>
+        <rdfs:label xml:lang="en">Format</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#hyper-parameters -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#hyper-parameters">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#Training"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The settings of the tool including the learning_rate, batch_size and other specifications that impact on the results.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hyper-parameters</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#iterations -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#iterations">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#Training"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">Specify the number of iteration needed for training the tool.</rdfs:comment>
+        <rdfs:label xml:lang="en">Number of Iterations</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#keyForm -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#keyForm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#keyBasedMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Describes the criteria used to match keys, such as exact match or approximate match.</rdfs:comment>
+        <rdfs:label xml:lang="en">Key form</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#kind -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#kind">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#PerformanceMetric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Describes the kind of the evaluation metric used, i.e., supervised or un-supervised.</rdfs:comment>
+        <rdfs:label xml:lang="en">Kind</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#ApplicationDomain"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#Dependency"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#Feature"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#LinkingProbemType"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#LinkingTechnique"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#LinkingTool"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#PerformanceMetric"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#TrainingAlgorithm"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the name or title of an entity, applicable to features, tools, techniques, problem types, metrics, domain, and dependencies.</rdfs:comment>
+        <rdfs:label xml:lang="en">Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#promptDesign -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#promptDesign">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LLMMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Describes the structure of the prompts used to interact with the large language model, such as zero-shot or few-shot prompting.</rdfs:comment>
+        <rdfs:label xml:lang="en">Prompt Design</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#requiresTraining -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#requiresTraining">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">A boolean used to indicate wether the linking tool requires training or not.</rdfs:comment>
+        <rdfs:label xml:lang="en">Requires training</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#ruleDefinitionLanguage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#ruleDefinitionLanguage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#RuleBasedMethod"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the language or framework used to define rules, such as SPARQL or SQL.</rdfs:comment>
+        <rdfs:label xml:lang="en">Rule Definition Language</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#source -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#source">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#Dependency"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#LinkingTool"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies the origin or URL of the developer or dependency.</rdfs:comment>
+        <rdfs:label xml:lang="en">Source</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#version -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#version">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#Dependency"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/CODIT#LinkingTool"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Represents the specific version of the tool or the dependency.</rdfs:comment>
+        <rdfs:label xml:lang="en">Version</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#ApplicationDomain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#ApplicationDomain">
+        <rdfs:comment xml:lang="en">Specifies the domain(s) in which the linking tool can be applied, such as healthcare, e-commerce, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Application Domain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#Dependency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#Dependency">
+        <rdfs:comment xml:lang="en">Represents external libraries or resources required by a linking tool.</rdfs:comment>
+        <rdfs:label xml:lang="en">Dependency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#EmbeddingBasedMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#EmbeddingBasedMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/CODIT#NonSymbolic"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/CODIT#RuleBasedMethod"/>
+        <rdfs:comment xml:lang="en">A method that uses embeddings (vector representations) for linking.</rdfs:comment>
+        <rdfs:label xml:lang="en">Embedding Based Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#Feature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#Feature">
+        <rdfs:comment xml:lang="en">Describes specific capabilities or functionalities of a linking tool.</rdfs:comment>
+        <rdfs:label xml:lang="en">Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#InputData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#InputData">
+        <rdfs:comment xml:lang="en">Represents the input data structure and format that a linking tool can process.</rdfs:comment>
+        <rdfs:label xml:lang="en">Input Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#LLMMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#LLMMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/CODIT#NonSymbolic"/>
+        <rdfs:comment xml:lang="en">A linking technique that leverages large language models (LLMs) for entity matching.</rdfs:comment>
+        <rdfs:label xml:lang="en">LLM Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#LinkingProbemType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#LinkingProbemType">
+        <rdfs:comment xml:lang="en">Represents a linking problem type that a linking tool is suited to perform, such as large scale data or datasets with different schemas.</rdfs:comment>
+        <rdfs:label xml:lang="en">Linking Problem Type (LPT)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#LinkingTechnique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#LinkingTechnique">
+        <rdfs:comment xml:lang="en">Represents the methods and criteria used for linking entities across datasets. Includes various techniques like Rule-Based, String Similarity, and Machine Learning methods.</rdfs:comment>
+        <rdfs:label xml:lang="en">Linking Technique</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#LinkingTool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#LinkingTool">
+        <rdfs:comment xml:lang="en">Represents a data interlinking tool used for linking entities across different datasets or knowledge graphs.</rdfs:comment>
+        <rdfs:label xml:lang="en">Linking Tool</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#NonSymbolic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#NonSymbolic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/CODIT#LinkingTechnique"/>
+        <rdfs:comment xml:lang="en">Employ machine learning to discover latent patterns for entity matching, excelling in scalability but often lacking interpretability.</rdfs:comment>
+        <rdfs:label xml:lang="en">Non-Symbolic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#OutputData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#OutputData">
+        <rdfs:comment xml:lang="en">Describes the characteristics of the output data generated by a linking tool.</rdfs:comment>
+        <rdfs:label xml:lang="en">Output Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#PerformanceMetric -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#PerformanceMetric">
+        <rdfs:comment xml:lang="en">Specifies the evaluation metrics used to assess the performance of a linking tool.</rdfs:comment>
+        <rdfs:label xml:lang="en">Performance Metric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#RuleBasedMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#RuleBasedMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/CODIT#Symbolic"/>
+        <rdfs:comment xml:lang="en">A technique based on predefined rules to link entities.</rdfs:comment>
+        <rdfs:label xml:lang="en">Rule Based Method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#Symbolic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#Symbolic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/CODIT#LinkingTechnique"/>
+        <rdfs:comment xml:lang="en">Use predefined rules, logical reasoning, or schema alignment to match entities, offering high explainability but limited scalability.</rdfs:comment>
+        <rdfs:label xml:lang="en">Symbolic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#Training -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#Training">
+        <rdfs:comment xml:lang="en">Represents the training configuration for machine learning models used in data linking.</rdfs:comment>
+        <rdfs:label xml:lang="en">Training</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#TrainingAlgorithm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#TrainingAlgorithm">
+        <rdfs:comment xml:lang="en">The algorithm used for training the tool.</rdfs:comment>
+        <rdfs:label xml:lang="en">Training Algorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#TrainingData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#TrainingData">
+        <rdfs:label xml:lang="en">Training Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/CODIT#keyBasedMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/CODIT#keyBasedMethod">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/CODIT#Symbolic"/>
+        <rdfs:comment xml:lang="en">A method that aims at generating keys and using them for EM.</rdfs:comment>
+        <rdfs:label xml:lang="en">Key Based Method</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
