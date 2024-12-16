@@ -1,75 +1,76 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://example.org/ontology#"
-     xml:base="http://example.org/ontology#"
+<rdf:RDF xmlns="http://example.org/#"
+     xml:base="http://www.semanticweb.org/CODIT#"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ex="http://example.org/ontology#">
-    <owl:Ontology rdf:about="http://example.org/ontology">
+     xmlns:ex="http://www.semanticweb.org/CODIT#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/CODIT">
         <dc:rights xml:lang="en">https://creativecommons.org/licenses/by/4.0/</dc:rights>
     </owl:Ontology>
 
-    <!-- Instance of LinkingTool -->
-    <ex:LinkingTool rdf:about="http://example.org/ontology#LIMES">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-        <ex:name>LIMES</ex:name>
-        <ex:developer>Axel-Cyrille, Ngonga Ngomo, Sören Auer</ex:developer>
+    <!-- LinkingTool: LIMES -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/CODIT#LIMES">
+        <rdf:type rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <dc:title>LIMES</dc:title>
+        <ex:toolPublisher>Axel-Cyrille, Ngonga Ngomo, Sören Auer</ex:toolPublisher>
         <ex:version>1.0</ex:version>
         <ex:requiresTraining>false</ex:requiresTraining>
-        <ex:source>http: //limes.sf.net</ex:source>
-        <ex:configuration>
+        <ex:source>http://limes.sf.net</ex:source>
+        <dc:description>
             Supports configurable SPARQL endpoints, similarity thresholds, and metric selection.
-        </ex:configuration>
-        <ex:producesOutput rdf:resource="http://example.org/ontology#OutputData"/>
-        <ex:acceptsData rdf:resource="http://example.org/ontology#InputData"/>
-        <ex:evaluatedBy rdf:resource="http://example.org/ontology#Runtime"/>
-        <ex:hasDependency rdf:resource="http://example.org/ontology#SPARQLEndpoints"/>
-        <ex:hasFeature rdf:resource="http://example.org/ontology#TimeEfficiency"/>
-        <ex:usesTechnique rdf:resource="http://example.org/ontology#EmbeddingBasedMethod"/>
-        <ex:usesCriteria rdf:resource="http://example.org/ontology#AttributeSimilarity"/>
-    </ex:LinkingTool>
+        </dc:description>
+        <ex:producesOutput rdf:resource="http://www.semanticweb.org/CODIT#OutputData"/>
+        <ex:acceptsData rdf:resource="http://www.semanticweb.org/CODIT#InputData"/>
+        <ex:evaluatedBy rdf:resource="http://www.semanticweb.org/CODIT#Runtime"/>
+        <ex:hasDependency rdf:resource="http://www.semanticweb.org/CODIT#SPARQLEndpoints"/>
+        <ex:hasFeature rdf:resource="http://www.semanticweb.org/CODIT#TimeEfficiency"/>
+        <ex:usesTechnique rdf:resource="http://www.semanticweb.org/CODIT#EmbeddingBasedMethod"/>
+        <ex:usesCriteria rdf:resource="http://www.semanticweb.org/CODIT#AttributeSimilarity"/>
+    </owl:NamedIndividual>
 
-    <!-- Instance of InputData -->
-    <ex:InputData rdf:about="http://example.org/ontology#InputData">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <!-- InputData: LKDData -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/CODIT#LKDData">
+        <rdf:type rdf:resource="http://www.semanticweb.org/CODIT#InputData"/>
         <ex:category>Linked Data</ex:category>
         <ex:format>SPARQL</ex:format>
-    </ex:InputData>
+    </owl:NamedIndividual>
 
-    <!-- Instance of OutputData -->
-    <ex:OutputData rdf:about="http://example.org/ontology#OutputData">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <!-- OutputData: OutputData -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/CODIT#OutputData">
+        <rdf:type rdf:resource="http://www.semanticweb.org/CODIT#OutputData"/>
         <ex:category>Linked Data</ex:category>
         <ex:format>NTriples</ex:format>
-    </ex:OutputData>
+    </owl:NamedIndividual>
 
-        <!-- Instance of PerformanceMetric -->
-    <ex:PerformanceMetric rdf:about="http://example.org/ontology#Runtime">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <!-- PerformanceMetric: Runtime -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/CODIT#Runtime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/CODIT#PerformanceMetric"/>
         <ex:kind>Non-Supervised</ex:kind>
-        <ex:name>Runtime</ex:name>
-    </ex:PerformanceMetric>
+        <dc:title>Runtime</dc:title>
+    </owl:NamedIndividual>
 
-    <!-- Instance of Dependency -->
-    <ex:Dependency rdf:about="http://example.org/ontology#SPARQLEndpoints">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-        <ex:name>SPARQL Endpoints</ex:name>
+    <!-- Dependency: SPARQLEndpoints -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/CODIT#SPARQLEndpoints">
+        <rdf:type rdf:resource="http://www.semanticweb.org/CODIT#Dependency"/>
+        <dc:title>SPARQL Endpoints</dc:title>
         <ex:source>http://data.linkedct.org/sparql</ex:source>
-    </ex:Dependency>
+    </owl:NamedIndividual>
 
-    <!-- Instance of Feature -->
-    <ex:Feature rdf:about="http://example.org/ontology#TimeEfficiency">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <!-- Feature: TimeEfficiency -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/CODIT#TimeEfficiency">
+        <rdf:type rdf:resource="http://www.semanticweb.org/CODIT#Feature"/>
         <ex:name>Time Efficiency</ex:name>
-    </ex:Feature>
+        <ex:description>Optimizes processing time for data interlinking tasks.</ex:description>
+    </owl:NamedIndividual>
 
-    <!-- Instance of EmbeddingBasedMethod -->
-    <ex:EmbeddingBasedMethod rdf:about="http://example.org/ontology#EmbeddingBasedMethod">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-        <ex:name>Triangle Inequality</ex:name>
-    </ex:EmbeddingBasedMethod>
+    <!-- EmbeddingBasedMethod: Triangle Inequality -->
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/CODIT#EmbeddingBasedMethod">
+        <rdf:type rdf:resource="http://www.semanticweb.org/CODIT#EmbeddingBasedMethod"/>
+        <dc:title>Triangle Inequality</dc:title>
+    </owl:NamedIndividual>
 
 </rdf:RDF>
