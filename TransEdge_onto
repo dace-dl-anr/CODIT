@@ -1,39 +1,31 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:ex="http://example.org/transedge#">
-
-    <!-- Classes -->
-    <owl:Class rdf:about="http://example.org/transedge#LinkingTool"/>
-    <owl:Class rdf:about="http://example.org/transedge#LinkingMethod"/>
-    <owl:Class rdf:about="http://example.org/transedge#InputData"/>
-    <owl:Class rdf:about="http://example.org/transedge#OutputData"/>
-    <owl:Class rdf:about="http://example.org/transedge#Feature"/>
-    <owl:Class rdf:about="http://example.org/transedge#MatchingCriterion"/>
-    <owl:Class rdf:about="http://example.org/transedge#ApplicationDomain"/>
-    <owl:Class rdf:about="http://example.org/transedge#PerformanceMetric"/>
+         xmlns:ex="http://www.semanticweb.org/CODIT#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
 
     <!-- TransEdge Tool Instance -->
     <ex:LinkingTool rdf:about="http://example.org/transedge#TransEdge">
-        <ex:name>TransEdge</ex:name>
-        <ex:version>1.0</ex:version>
-        <ex:developer>Nanjing University and UCLA</ex:developer>
-        <ex:description>TransEdge is a knowledge graph embedding model that contextualizes relation embeddings in terms of head-tail entity pairs for edge-centric translation.</ex:description>
+        <dc:title>TransEdge: Translating Relation-contextualized Embeddings for Knowledge Graphs</dc:title>
+        <dc:hasVersion>1.0</dc:hasVersion>
+        <dc:toolPublisher>Nanjing University and UCLA</dc:toolPublisher>
+        <dc:description>TransEdge is a knowledge graph embedding model that contextualizes relation embeddings in terms of head-tail entity pairs for edge-centric translation.</dc:description>
         <ex:usesMethod rdf:resource="http://example.org/transedge#EdgeCentricEmbedding"/>
         <ex:acceptsData rdf:resource="http://example.org/transedge#RelationalTriples"/>
         <ex:producesOutput rdf:resource="http://example.org/transedge#IdentityLink"/>
         <ex:hasFeature rdf:resource="http://example.org/transedge#MultilingualSupport"/>
         <ex:hasFeature rdf:resource="http://example.org/transedge#Scalability"/>
         <ex:hasFeature rdf:resource="http://example.org/transedge#BootStrapping"/>
-        <ex:usesCriterion rdf:resource="http://example.org/transedge#AttributeComparison"/>
+        <ex:usesTechnique rdf:resource="http://example.org/transedge#TransEdge"/>
+        <ex:evaluatedBy rdf:resource="http://example.org/transedge#Hit"/>
         <ex:evaluatedBy rdf:resource="http://example.org/transedge#Precision"/>
         <ex:evaluatedBy rdf:resource="http://example.org/transedge#Recall"/>
     </ex:LinkingTool>
 
     <owl:NamedIndividual rdf:about="http://example.org/transedge#EdgeCentricTranslationalTechnique">
         <rdf:type rdf:resource="http://example.org/transedge#EmbeddingBasedMethod"/>
-        <name>Edge-centric Translational Embedding Technique</name>
-        <description>Edge-centric model that distinguishes how a relation predicate is represented based on different contexts of entities holding that relation.</description>
+        <dc:title>Edge-centric Translational Embedding Technique</dc:title>
+        <dc:description>Edge-centric model that distinguishes how a relation predicate is represented based on different contexts of entities holding that relation.</dc:description>
         <embeddingAlgorithm>Translational embedding models.</embeddingAlgorithm>
     </owl:Class>
 
@@ -41,53 +33,62 @@
     <owl:NamedIndividual rdf:about="http://example.org/transedge#RelationalTriples">
         <rdf:type rdf:resource="http://example.org/transedge#InputData"/>
         <format>CSV, RDF</format>
-        <description>The input data for TransEdge consists of structured knowledge graph triples in the form of (h,r,t), where h is the head entity, r is the relation, and t is the tail entity. </description>
+        <dc:description>The input data for TransEdge consists of structured knowledge graph triples in the form of (h,r,t), where h is the head entity, r is the relation, and t is the tail entity. </dc:description>
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:about="http://example.org/transedge#IdentityLink">
         <rdf:type rdf:resource="http://example.org/transedge#OutputData"/>
         <format>turlte</format>
-        <description>Matched entity pairs across knowledge graphs.</description>
+        <dc:description>Matched entity pairs across knowledge graphs.</dc:description>
     </owl:NamedIndividual>
 
     <!-- Instances for Features -->
     <owl:NamedIndividual rdf:about="http://example.org/transedge#MultilingualSupport">
         <rdf:type rdf:resource="http://example.org/transedge#Feature"/>
-        <name>Multilingual Support</name>
-        <description>Ability to align KGs using different languages.</description>
+        <dc:title>Multilingual Support</dc:title>
+        <dc:description>Ability to align KGs using different languages.</dc:description>
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:about="http://example.org/transedge#Scalability">
         <rdf:type rdf:resource="http://example.org/transedge#Feature"/>
-        <name>Scalability</name>
-        <description>Ability to handle large KGs.</description>
+        <dc:title>Scalability</dc:title>
+        <dc:description>Ability to handle large KGs.</dc:description>
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:about="http://example.org/transedge#BootStrapping">
         <rdf:type rdf:resource="http://example.org/transedge#Feature"/>
-        <name>Boot Strapping</name>
-        <description>This strategy allows to augment the input data.</description>
+        <dc:title>Boot Strapping</dc:title>
+        <dc:description>This strategy allows to augment the input data.</dc:description>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://example.org/transedge#TransEdge">
+        <rdf:type rdf:resource="http://example.org/transedge#EmbeddingBasedMethod"/>
+        <dc:title>TransEde</dc:title>
+        <dc:description>Contextualizes relations into edge embeddings for specific entity pairs.</dc:description>
+        <linkGenCriteria>Translations between entity embeddings using contextualized relation representations.</linkGenCriteria>
+        <embeddingAlgorithm>Builds on the translational concept of TransE but uses contextualization (compression/projection)</embeddingAlgorithm>
+        <dimenshonality>Typically d=75, d=200, or d=500 depending on the dataset</dimenshonality>
     </owl:NamedIndividual>
 
     <!-- Instances for Performance Metrics -->
     <owl:NamedIndividual rdf:about="http://example.org/transedge#Hit">
         <rdf:type rdf:resource="http://example.org/transedge#PerformanceMetric"/>
-        <name>Hit</name>
+        <dc:title>Hit</dc:title>
         <kind>Supervised</kind>
-        <description>Evaluation metric that measures alignment accuracy of the top-ranked entity pair.</description>
+        <dc:description>Evaluation metric that measures alignment accuracy of the top-ranked entity pair.</dc:description>
     </owl:NamedIndividual>
 
         <owl:NamedIndividual rdf:about="http://example.org/transedge#Precision">
         <rdf:type rdf:resource="http://example.org/transedge#PerformanceMetric"/>
-        <ex:name>Precision</ex:name>
+        <dc:title>Precision</dc:title>
         <ex:kind>Supervised</ex:kind>
-        <ex:description>Fraction of relevant alignments among retrieved alignments.</ex:description>
+        <dc:description>Fraction of relevant alignments among retrieved alignments.</dc:description>
     </owl:NamedIndividual>
 
     <owl:NamedIndividual rdf:about="http://example.org/transedge#Recall">
         <rdf:type rdf:resource="http://example.org/transedge#PerformanceMetric"/>
-        <ex:name>Recall</ex:name>
+        <dc:title>Recall</dc:title>
         <ex:kind>Supervised</ex:kind>
-        <ex:description>Fraction of relevant alignments that were retrieved.</ex:description>
+        <dc:description>Fraction of relevant alignments that were retrieved.</dc:description>
     </owl:NamedIndividual>
 </rdf:RDF>
