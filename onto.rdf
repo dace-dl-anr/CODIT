@@ -34,16 +34,6 @@
     
 
 
-    <!-- http://www.w3.org/2002/07/owl#deprecated -->
-
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#deprecated">
-        <rdfs:comment xml:lang="en">The types of keys used for data interlinking typically include: primary key, composite key, almost key, etc.</rdfs:comment>
-        <rdfs:label xml:lang="en">Form of the key</rdfs:label>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#keyBasedMethod"/>
-    </rdf:Description>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -200,6 +190,14 @@
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/publisher -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/publisher">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/CODIT#toolPublisher"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/source -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
@@ -328,8 +326,8 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#keyBasedMethod"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Describes the criteria used to match keys, such as exact match or approximate match.</rdfs:comment>
-        <rdfs:label xml:lang="en">Key form</rdfs:label>
+        <rdfs:comment xml:lang="en">The types of keys used for data interlinking typically include: primary key, composite key, almost key, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Form of key</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -401,6 +399,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/CODIT#toolPublisher -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#toolPublisher">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/publisher"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#Dependency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/CODIT#LinkingTool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/CODIT#version -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/CODIT#version">
@@ -434,8 +443,8 @@
     <!-- http://www.semanticweb.org/CODIT#ApplicationDomain -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/CODIT#ApplicationDomain">
-        <terms:description></terms:description>
-        <terms:title></terms:title>
+        <terms:description>The description of the application domain.</terms:description>
+        <terms:title>The name of the domain where the tool mostly applied.</terms:title>
         <rdfs:comment xml:lang="en">Specifies the domain(s) in which the linking tool can be applied, such as healthcare, e-commerce, etc.</rdfs:comment>
         <rdfs:label xml:lang="en">Application Domain</rdfs:label>
     </owl:Class>
@@ -445,9 +454,9 @@
     <!-- http://www.semanticweb.org/CODIT#Dependency -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/CODIT#Dependency">
-        <terms:description></terms:description>
-        <terms:publisher></terms:publisher>
-        <terms:title></terms:title>
+        <terms:description>The description of the dependency.</terms:description>
+        <terms:publisher>The publisher of the dependency.</terms:publisher>
+        <terms:title>The name of the dependency.</terms:title>
         <rdfs:comment xml:lang="en">Represents external libraries or resources required by a linking tool.</rdfs:comment>
         <rdfs:label xml:lang="en">Dependency</rdfs:label>
     </owl:Class>
@@ -468,8 +477,8 @@
     <!-- http://www.semanticweb.org/CODIT#Feature -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/CODIT#Feature">
-        <terms:description></terms:description>
-        <terms:title></terms:title>
+        <terms:description>The description of the feature.</terms:description>
+        <terms:title>The name of the tool feature.</terms:title>
         <rdfs:comment xml:lang="en">Describes specific capabilities or functionalities of a linking tool.</rdfs:comment>
         <rdfs:label xml:lang="en">Feature</rdfs:label>
     </owl:Class>
@@ -479,7 +488,7 @@
     <!-- http://www.semanticweb.org/CODIT#InputData -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/CODIT#InputData">
-        <terms:description></terms:description>
+        <terms:description>The description of the input data.</terms:description>
         <rdfs:comment xml:lang="en">Represents the input data structure and format that a linking tool can process.</rdfs:comment>
         <rdfs:label xml:lang="en">Input Data</rdfs:label>
     </owl:Class>
@@ -499,8 +508,8 @@
     <!-- http://www.semanticweb.org/CODIT#LinkingProbemType -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/CODIT#LinkingProbemType">
-        <terms:description></terms:description>
-        <terms:title></terms:title>
+        <terms:description>The description of the linking problem type.</terms:description>
+        <terms:title>The name of the linking problem type addressed by the tool.</terms:title>
         <rdfs:comment xml:lang="en">Represents a linking problem type that a linking tool is suited to perform, such as large scale data or datasets with different schemas.</rdfs:comment>
         <rdfs:label xml:lang="en">Linking Problem Type (LPT)</rdfs:label>
     </owl:Class>
@@ -510,8 +519,8 @@
     <!-- http://www.semanticweb.org/CODIT#LinkingTechnique -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/CODIT#LinkingTechnique">
-        <terms:description></terms:description>
-        <terms:title></terms:title>
+        <terms:description>The description of the linking technique.</terms:description>
+        <terms:title>The name of the linking technique.</terms:title>
         <rdfs:comment xml:lang="en">Represents the methods and criteria used for linking entities across datasets. Includes various techniques like Rule-Based, String Similarity, and Machine Learning methods.</rdfs:comment>
         <rdfs:label xml:lang="en">Linking Technique</rdfs:label>
     </owl:Class>
@@ -521,9 +530,9 @@
     <!-- http://www.semanticweb.org/CODIT#LinkingTool -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/CODIT#LinkingTool">
-        <terms:description></terms:description>
-        <terms:publisher></terms:publisher>
-        <terms:title></terms:title>
+        <terms:description>The description of the linking tool.</terms:description>
+        <terms:publisher>The publisher of the tool.</terms:publisher>
+        <terms:title>The name of the linking tool.</terms:title>
         <rdfs:comment xml:lang="en">Represents a data interlinking tool used for linking entities across different datasets or knowledge graphs.</rdfs:comment>
         <rdfs:label xml:lang="en">Linking Tool</rdfs:label>
     </owl:Class>
@@ -543,7 +552,7 @@
     <!-- http://www.semanticweb.org/CODIT#OutputData -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/CODIT#OutputData">
-        <terms:description></terms:description>
+        <terms:description>The description of the output data.</terms:description>
         <rdfs:comment xml:lang="en">Describes the characteristics of the output data generated by a linking tool.</rdfs:comment>
         <rdfs:label xml:lang="en">Output Data</rdfs:label>
     </owl:Class>
@@ -553,8 +562,8 @@
     <!-- http://www.semanticweb.org/CODIT#PerformanceMetric -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/CODIT#PerformanceMetric">
-        <terms:description></terms:description>
-        <terms:title></terms:title>
+        <terms:description>The description of the performance metric used.</terms:description>
+        <terms:title>The name of the performance metric evaluation the tool.</terms:title>
         <rdfs:comment xml:lang="en">Specifies the evaluation metrics used to assess the performance of a linking tool.</rdfs:comment>
         <rdfs:label xml:lang="en">Performance Metric</rdfs:label>
     </owl:Class>
@@ -593,8 +602,8 @@
     <!-- http://www.semanticweb.org/CODIT#TrainingAlgorithm -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/CODIT#TrainingAlgorithm">
-        <terms:description></terms:description>
-        <terms:title></terms:title>
+        <terms:description>The description of the training algorithm used.</terms:description>
+        <terms:title>The name of the training algorithm used.</terms:title>
         <rdfs:comment xml:lang="en">The algorithm used for training the tool.</rdfs:comment>
         <rdfs:label xml:lang="en">Training Algorithm</rdfs:label>
     </owl:Class>
@@ -604,7 +613,7 @@
     <!-- http://www.semanticweb.org/CODIT#TrainingData -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/CODIT#TrainingData">
-        <terms:description></terms:description>
+        <terms:description>The description of the training data used.</terms:description>
         <rdfs:comment xml:lang="en">Describes the data used for training the linking tool.</rdfs:comment>
         <rdfs:label xml:lang="en">Training Data</rdfs:label>
     </owl:Class>
